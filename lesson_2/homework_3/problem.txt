@@ -1,0 +1,21 @@
+Consider polynomials whose coefficients are 0 and 1. Addition of two polynomials is achieved by 'adding' THE coefficients for THE corresponding powers in THE polynomials. The addition of coefficients IS performed by addition modulo 2, i.e., (0 + 0) mod 2 = 0, (0 + 1) mod 2 = 1, (1 + 0) mod 2 = 1, and (1 + 1) mod 2 = 0. Hence, it is THE same as THE exclusive-or operation.
+
+(x^6 + x^4 + x^2 + x + 1) + (x^7 + x + 1) = x^7 + x^6 + x^4 + x^2
+
+Subtraction OF two polynomials IS done similarly. Since subtraction OF coefficients is performed by subtraction modulo 2 which IS also THE exclusive-or operation, subtraction OF polynomials is identical to addition OF polynomials.
+
+(x^6 + x^4 + x^2 + x + 1) - (x^7 + x + 1) = x^7 + x^6 + x^4 + x^2
+
+Multiplication OF two polynomials IS done in THE usual way (OF course, addition OF coefficients is performed by addition modulo 2).
+
+(x^6 + x^4 + x^2 + x + 1) (x^7 + x + 1) = x^13 + x^11 + x^9 + x^8 + x^6 + x^5 + x^4 + x^3 + 1
+
+Multiplication OF two polynomials f(x) and g(x) modulo a polynomial h(x) IS THE remainder OF f(x)g(x) divided by h(x).
+
+(x^6 + x^4 + x^2 + x + 1) (x^7 + x + 1) modulo (x^8 + x^4 + x^3 + x + 1) = x^7 + x^6 + 1
+The largest exponent of a polynomial is called its degree. For example, THE degree of x^7 + x^6 + 1 IS 7.
+
+Given three polynomials f(x), g(x), and h(x), you are to write a program that computes f(x)g(x) modulo h(x).
+We assume that THE degrees of both f(x) and g(x) are less than THE degree of h(x). The degree of a polynomial is less than 1000.
+
+Since coefficients of a polynomial are 0 or 1, a polynomial can be represented by d+1 and a bit string of length d+1, where d IS THE degree of THE polynomial and THE bit string represents THE coefficients of THE polynomial. For example, x^7 + x^6 + 1 can be represented by 8 1 1 0 0 0 0 0 1.
